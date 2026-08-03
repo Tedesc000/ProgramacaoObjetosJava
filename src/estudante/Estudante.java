@@ -21,5 +21,9 @@ public class Estudante {
         }
     }
 
-    
+    public Double calculaMedia(){
+        Double soma = 0;
+        
+
+    }
 }
