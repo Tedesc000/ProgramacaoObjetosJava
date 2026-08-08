@@ -1,4 +1,4 @@
-package avaliacao.formula1;
+package formula1;
 public class Pessoa {
     private String nome;
     private int idade;

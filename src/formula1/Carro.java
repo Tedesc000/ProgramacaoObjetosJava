@@ -1,4 +1,4 @@
-package avaliacao.formula1;
+package formula1;
 public class Carro {
     private int numero;
     private int posicao;

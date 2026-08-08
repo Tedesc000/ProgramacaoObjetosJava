@@ -1,4 +1,4 @@
-package avaliacao.formula1;
+package formula1;
 import java.util.Scanner;//tem que importar o scanner para poder ler
 public class Main{
     public static void main(String[] args){

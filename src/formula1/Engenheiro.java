@@ -1,4 +1,4 @@
-package avaliacao.formula1;
+package formula1;
 
 public class Engenheiro extends Pessoa {
     private int anoFormacao;
