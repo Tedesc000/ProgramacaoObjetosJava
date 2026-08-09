@@ -32,12 +32,27 @@ public class Estudante {
         }
     }
 
+//     4. Acrescente uma sobrecarga ao método calculaMedia da classe Estudante, que deverá retornar o
+// valor da média ponderada do objeto estudante. Para isso, recebe através de parâmetro um array de
+// cinco inteiros que são os pesos respectivos de cada uma das cinco notas.
+
+
     public Double calculaMedia(){
         double soma = 0;
         for(double nota: this.notas){
             soma += nota;
         }
         return soma / this.notas.size();
+    }
+
+    public Double calculaMedia(int[] pesos){
+        double somaPonderada = 0;
+        int somaPesos = 0;
+        for(int i=0; i < 5; i++){
+            somaPonderada += this.notas.get(i) * pesos[i];
+            somaPesos += pesos[i];
+        }
+        return somaPonderada / somaPesos;
     }
 
     public String getNotas(){
