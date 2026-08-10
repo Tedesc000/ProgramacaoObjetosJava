@@ -24,6 +24,11 @@ public class Estudante {
         this.notas = new ArrayList<>();
     }
 
+    public Estudante(){
+        this.nome = "";
+        this.notas = new ArrayList<>();
+    }
+
     public void insereNotas(){
         for(int i=0; i < 5; i++){
             System.out.println("Digite a " + (i+1) + " nota do aluno " + this.nome + ":");
@@ -35,7 +40,6 @@ public class Estudante {
 //     4. Acrescente uma sobrecarga ao método calculaMedia da classe Estudante, que deverá retornar o
 // valor da média ponderada do objeto estudante. Para isso, recebe através de parâmetro um array de
 // cinco inteiros que são os pesos respectivos de cada uma das cinco notas.
-
 
     public Double calculaMedia(){
         double soma = 0;
