@@ -11,8 +11,12 @@ public class Livro extends ItemEscrito {
         return disponivel;
     }
 
-    public void setDisponivel(boolean disponivel) {
-        this.disponivel = disponivel;
+    public void retirarLivro() {
+        this.disponivel = false;
+    }
+
+    public void devolverLivro() {
+        this.disponivel = true;
     }
 
     public static void listarLivros(List<Livro> livros) {
