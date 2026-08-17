@@ -6,7 +6,7 @@ public class Main {
     public static void main(String[] args) {
         boolean op;
         int opBiblio;
-        int opInserir;
+        int opInserir, opListar;
         Scanner scanner = new Scanner(System.in);
         List<Livro> livros = new ArrayList<Livro>();
         List<Periodico> periodicos = new ArrayList<Periodico>();
@@ -19,7 +19,14 @@ public class Main {
 
                 break;
                 case 2:
-                    
+                    System.out.println("1 - Listar livro\n2 - Listar periódicos");
+                    opListar = scanner.nextInt();
+                    if(opListar == 1){
+                        Livro.listarLivros(livros);
+                    }else if(opListar == 2){
+                        Periodico.listarPeriodicos(periodicos);
+                    }
+                    opListar = scanner.nextInt();
                 break;
                 case 3:
                     System.out.println("1 - Inserir livro\n2 - Inserir periódicos");
