@@ -1,4 +1,4 @@
-package biblioteca;
+// package biblioteca;
 import java.util.List;
 public class Periodico extends ItemEscrito {
     private int numVolume;

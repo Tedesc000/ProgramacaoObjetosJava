@@ -1,4 +1,4 @@
-package biblioteca;
+// package biblioteca;
 public abstract class ItemEscrito {
     private String titulo;
     private String autor;
