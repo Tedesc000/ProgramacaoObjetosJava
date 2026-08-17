@@ -1,6 +1,13 @@
+package biblioteca;
 import java.util.List;
 public class Livro extends ItemEscrito {
     private boolean disponivel;
+
+    public Livro(){
+        super("", "", 0, "");
+        this.disponivel = true;
+    }
+
 
     public Livro(String titulo, String autor, int ano, String genero) {
         super(titulo, autor, ano, genero);
