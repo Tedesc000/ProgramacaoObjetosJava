@@ -1,6 +1,12 @@
+package biblioteca;
 import java.util.List;
 public class Periodico extends ItemEscrito {
     private int numVolume;
+
+    public Periodico() {
+        super("", "", 0, "");
+        this.numVolume = 0;
+    }
     
     public Periodico(String titulo, String autor, int ano, String genero, int numVolume) {
         super(titulo, autor, ano, genero);
