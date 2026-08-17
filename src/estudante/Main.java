@@ -28,5 +28,8 @@ public class Main {
         for(Estudante estudante: estudantes){
             System.out.println("Aluno(a) " + estudante.getNome() + ": " + estudante.calculaMedia());
         }
+
+        System.out.println("Alunos aprovados:\n");
+        Estudante aprovados[] = Estudante.filtrarAprovados(estudantes);
     }
 }

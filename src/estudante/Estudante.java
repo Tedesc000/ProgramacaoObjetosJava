@@ -28,7 +28,7 @@ public class Estudante {
         this.nome = "";
         this.notas = new ArrayList<>();
     }
-
+    /*colocar a exceção que a sora passou em aula */
     public void insereNotas(){
         for(int i=0; i < 5; i++){
             System.out.println("Digite a " + (i+1) + " nota do aluno " + this.nome + ":");
@@ -90,7 +90,7 @@ public class Estudante {
 // foram aprovados, sabendo que 6 é a média mínima para aprovação. Se nenhum estudante foi
 // aprovado, retornar null. A classe Estudante está descrita no exercício 1.
 
-    public static Estudante[] filtrarAprovados(Estudante[] estudantes){
+    public static Estudante[] filtrarAprovados(List<Estudante> estudantes){
         List<Estudante> aprovados = new ArrayList<>();
         for(Estudante estudante: estudantes){
             if(estudante.calculaMedia() >= 6){
