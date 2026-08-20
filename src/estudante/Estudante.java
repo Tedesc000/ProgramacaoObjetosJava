@@ -1,5 +1,6 @@
 package estudante;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 // 2. Programe em Java a classe Estudante com os seguintes membros:
@@ -30,10 +31,18 @@ public class Estudante {
     }
     /*colocar a exceção que a sora passou em aula */
     public void insereNotas(){
-        for(int i=0; i < 5; i++){
-            System.out.println("Digite a " + (i+1) + " nota do aluno " + this.nome + ":");
-            Double nota = scanner.nextDouble();
-            this.notas.add(nota);
+        boolean valido = false;
+        while(!valido){
+            try{
+                for(int i=0; i < 5; i++){
+                    System.out.println("Digite a " + (i+1) + " nota do aluno " + this.nome + ":");
+                    Double nota = scanner.nextDouble();
+                    this.notas.add(nota);
+                }
+            }catch(InputMismatchException e){
+                System.out.println("Entrada inválida! Digite apenas um número inteiro.");
+                scanner.nextLine();
+            }
         }
     }
 
