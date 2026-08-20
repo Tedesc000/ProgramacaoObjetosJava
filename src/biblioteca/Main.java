@@ -10,6 +10,7 @@
 // acesso isDisponivel para retornar este estado do livro.
 // package biblioteca; sora tive que comentar os package pq tava dando erro
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 public class Main {
@@ -96,10 +97,21 @@ public class Main {
                     }
                 break;
             }
-
-            System.out.println("Deseja continuar na biblioteca?(1 - sim | 2 - não)");
-            op = scanner.nextInt();
-            scanner.nextLine();
+            do {
+    System.out.println("Deseja continuar na biblioteca? (1 - sim | 2 - não)");
+    // coloquei para validar a exceção e evitar dar pau no meio da execução
+    try {
+        op = scanner.nextInt();
+        if (op != 1 && op != 2) {
+            System.out.println("Opção inválida! Digite 1 ou 2.");
+        }
+    } catch (InputMismatchException e) {
+        System.out.println("Entrada inválida! Digite apenas um número inteiro.");
+        scanner.nextLine();
+        op = 0;
+    }
+    } while (op != 1 && op != 2);
+    scanner.nextLine();
         } while (op == 1);
     }
 }

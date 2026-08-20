@@ -1,5 +1,6 @@
 package estudante;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 public class Main {
@@ -20,14 +21,34 @@ public class Main {
             estudante.insereNotas();
             estudantes.add(estudante);
 
-            System.out.println("Deseja adicionar mais alunos?(1-sim | 0-não)");
-            opt = scanner.nextInt();
-            scanner.nextLine();
+            do {
+                System.out.println("Deseja adicionar mais alunos?(1-sim | 0-não)");
+                try {
+                    opt = scanner.nextInt();
+                    if (opt != 1 && opt != 0) {
+                        System.out.println("Opção inválida! Digite 1 ou 0.");
+                    }
+                } catch (InputMismatchException e) {
+                    System.out.println("Entrada inválida! Digite apenas um número inteiro.");
+                    scanner.nextLine();
+                    opt = -1;
+                }
+            } while (opt != 1 && opt != 0);
+        scanner.nextLine();
         } while (opt == 1);
 
         for(int i=0; i<5; i++){
-            System.out.println("Digite o peso da nota " + (i+1) + ":");
-            pesos[i] = scanner.nextInt();
+            boolean valido = false;
+            while(!valido){
+                System.out.println("Digite o peso da nota " + (i+1) + ":");
+                try {
+                    pesos[i] = scanner.nextInt();
+                    valido = true;
+                } catch (InputMismatchException e) {
+                    System.out.println("Entrada inválida! Digite apenas um número inteiro.");
+                    scanner.nextLine();
+                }
+            }
         }
 
         System.out.println("Média dos alunos:\n");
